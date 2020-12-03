@@ -1,34 +1,27 @@
 {
-  "name": "level-selector",
+  "name": "@n.makarin/clappr-level-selector-plugin",
   "description": "A simple plugin for Clappr that adds support to manually select level on multi-bitrate streams.",
   "version": "0.2.0",
   "license": "MIT",
-  "repository": "clappr/clappr-level-selector-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clappr/clappr-level-selector-plugin.git"
+  },
   "main": "dist/level-selector.js",
   "scripts": {
-    "release": "node_modules/.bin/webpack --p --output-filename level-selector.min.js",
-    "build": "node_modules/.bin/webpack --progress",
-    "watch": "node_modules/.bin/webpack --progress --watch",
+    "release": "webpack --p --output-filename level-selector.min.js",
+    "build": "webpack --progress",
+    "watch": "webpack --progress --watch",
     "test": "npm run lint && echo 'No tests configured - aborting.'",
     "lint": "eslint *.js src/",
     "lint:fix": "npm run lint -- --fix",
-    "start": "node_modules/.bin/webpack-dev-server --content-base public/ --output-public-path /latest --hot",
+    "start": "webpack-dev-server --content-base public/ --output-public-path /latest --hot",
     "lock": "rm -rf npm-shrinkwrap.json node_modules && npm install --silent && npm shrinkwrap"
   },
-  "author": {
-    "name": "Lucas Mundim",
-    "email": "lucas.mundim@gmail.com",
-    "url": "https://github.com/lucasmundim"
-  },
+  "author": "Nikita Makarin <zn.makarinm@gmail.com> (https://github.com/n-makarin)",
   "contributors": [
-    {
-      "name": "Flávio Ribeiro",
-      "email": "email@flavioribeiro.com"
-    },
-    {
-      "name": "Bruno Torres",
-      "email": "me@brunotorr.es"
-    }
+    "Flávio Ribeiro <email@flavioribeiro.com>",
+    "Bruno Torres <me@brunotorr.es>"
   ],
   "keywords": [
     "clappr",
@@ -55,5 +48,10 @@
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1",
     "yargs": "^11.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/clappr/clappr-level-selector-plugin/issues"
+  },
+  "homepage": "https://github.com/clappr/clappr-level-selector-plugin#readme",
+  "dependencies": {}
 }
