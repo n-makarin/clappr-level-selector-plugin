@@ -1,5 +1,5 @@
 {
-  "name": "@n.makarin/clappr-level-selector-plugin",
+  "name": "@nmakarin/clappr-level-selector-plugin",
   "description": "A simple plugin for Clappr that adds support to manually select level on multi-bitrate streams.",
   "version": "0.2.0",
   "license": "MIT",
