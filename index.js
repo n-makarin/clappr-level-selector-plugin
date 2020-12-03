@@ -1,3 +1,3 @@
-import LevelSelector from './src/main.js'
+import ClapprLevelSelectorPlugin from './src/main.js'
 
-export default LevelSelector
+export default ClapprLevelSelectorPlugin

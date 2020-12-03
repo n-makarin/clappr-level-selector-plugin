@@ -48,7 +48,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '<%=baseUrl%>/',
     filename: filename,
-    library: 'LevelSelector',
+    library: 'ClapprLevelSelectorPlugin',
     libraryTarget: 'umd',
   },
   devServer: {

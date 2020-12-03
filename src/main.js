@@ -4,7 +4,7 @@ import pluginStyle from './public/style.scss'
 
 const AUTO = -1
 
-export default class LevelSelector extends UICorePlugin {
+export default class ClapprLevelSelectorPlugin extends UICorePlugin {
 
   static get version() { return VERSION }
 
@@ -94,7 +94,7 @@ export default class LevelSelector extends UICorePlugin {
   fillLevels(levels, initialLevel = AUTO) {
     if (this.selectedLevelId === undefined) this.selectedLevelId = initialLevel
 
-    let onLevelsAvailable = this.core.options && this.core.options.levelSelectorConfig && this.core.options.levelSelectorConfig.onLevelsAvailable
+    let onLevelsAvailable = this.core.options && this.core.options.ClapprLevelSelectorPluginConfig && this.core.options.ClapprLevelSelectorPluginConfig.onLevelsAvailable
     if (onLevelsAvailable) {
       if (typeof onLevelsAvailable === 'function')
         levels = onLevelsAvailable(levels.slice())
@@ -108,14 +108,14 @@ export default class LevelSelector extends UICorePlugin {
   }
 
   configureLevelsLabels() {
-    if (this.core.options.levelSelectorConfig === undefined) return
+    if (this.core.options.ClapprLevelSelectorPluginConfig === undefined) return
 
-    let labelCallback = this.core.options.levelSelectorConfig.labelCallback
+    let labelCallback = this.core.options.ClapprLevelSelectorPluginConfig.labelCallback
     if (labelCallback && typeof labelCallback !== 'function')
       throw new TypeError('labelCallback must be a function')
 
-    let hasLabels = this.core.options.levelSelectorConfig.labels
-    let labels = hasLabels ? this.core.options.levelSelectorConfig.labels : {}
+    let hasLabels = this.core.options.ClapprLevelSelectorPluginConfig.labels
+    let labels = hasLabels ? this.core.options.ClapprLevelSelectorPluginConfig.labels : {}
 
     if (labelCallback || hasLabels) {
       let level
@@ -139,7 +139,7 @@ export default class LevelSelector extends UICorePlugin {
   }
 
   onLevelSelect(event) {
-    this.selectedLevelId = parseInt(event.target.dataset.levelSelectorSelect, 10)
+    this.selectedLevelId = parseInt(event.target.dataset.ClapprLevelSelectorPluginSelect, 10)
     if (this.playback.currentLevel == this.selectedLevelId) return false
     this.playback.currentLevel = this.selectedLevelId
 
@@ -159,7 +159,7 @@ export default class LevelSelector extends UICorePlugin {
 
   levelElement(id) { return this.$('.level_selector ul a'+(!isNaN(id) ? '[data-level-selector-select="'+id+'"]' : '')).parent() }
 
-  getTitle() { return (this.core.options.levelSelectorConfig || {}).title }
+  getTitle() { return (this.core.options.ClapprLevelSelectorPluginConfig || {}).title }
 
   startLevelSwitch() { this.buttonElement().addClass('changing') }
 

@@ -13,12 +13,12 @@ Add both Clappr and Level Selector plugin scripts to your HTML:
 </head>
 ```
 
-Then just add `LevelSelector` into the list of plugins of your player instance:
+Then just add `ClapprLevelSelectorPlugin` into the list of plugins of your player instance:
 
 ```javascript
 var player = new Clappr.Player({
   source: "http://your.video/here.m3u8",
-  plugins: [LevelSelector]
+  plugins: [ClapprLevelSelectorPlugin]
 });
 ```
 
@@ -27,8 +27,8 @@ You can also customize the labels and title:
 ```javascript
 var player = new Clappr.Player({
   source: "http://your.video/here.m3u8",
-  plugins: [LevelSelector],
-  levelSelectorConfig: {
+  plugins: [ClapprLevelSelectorPlugin],
+  ClapprLevelSelectorPluginConfig: {
     title: 'Quality',
     labels: {
         2: 'High', // 500kbps
@@ -47,7 +47,7 @@ And also transform available levels:
 ```javascript
 var player = new Clappr.Player({
   // [...]
-  levelSelectorConfig: {
+  ClapprLevelSelectorPluginConfig: {
     onLevelsAvailable: function(levels) {
       return levels.reverse(); // For example, reverse levels order
     },
